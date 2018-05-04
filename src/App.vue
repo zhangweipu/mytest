@@ -1,40 +1,42 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    {{msg}}
-    aaaaaaaaaa
-    {{test}}
-    <router-view/>
+    <top></top>
+    <AppMain></AppMain>
   </div>
 </template>
 <script>
+  import Left from './views/layout/left'
+  import AppMain from './views/layout/AppMain'
   //导入组件
   // import hello from './components/HelloWorld'
   // import hello2 from './components/hello2'
   import axios from 'axios'
 export default {
   name: 'App',
-  params:'',
+  components:{
+    Left,
+    AppMain
+  },
   data () {
     return {
       msg: '欢迎来到菜鸟教程！',
       test:''
     }
   },
-    this:console.log("daozh"),
-  //加载mounted 或 create
-  created:function(){
-    this.loadData
-  },
-  //TODO：没能实现数据传输
-  computed:{
-    loadData:function () {
-      axios.post("/api/admin/api/test").then(function (response) {
-        console.log(1),
-        this.test=response.data.data
-      }.bind(this))
-    }
-  }
+  //   this:console.log("daozh"),
+  // //加载mounted 或 create
+  // created:function(){
+  //   this.loadData
+  // },
+  // //TODO：没能实现数据传输
+  // computed:{
+  //   loadData:function () {
+  //     axios.post("/api/admin/api/test").then(function (response) {
+  //       console.log(1),
+  //       this.test=response.data.data
+  //     }.bind(this))
+  //   }
+  // }
 
 
 
