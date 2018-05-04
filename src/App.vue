@@ -24,16 +24,15 @@ export default {
     this:console.log("daozh"),
   //加载mounted 或 create
   created:function(){
-    this.loadData()
+    this.loadData
   },
   //TODO：没能实现数据传输
-  methods:{
+  computed:{
     loadData:function () {
       axios.post("/api/admin/api/test").then(function (response) {
         console.log(1),
-          console.log(response.data.data)
         this.test=response.data.data
-      })
+      }.bind(this))
     }
   }
 
