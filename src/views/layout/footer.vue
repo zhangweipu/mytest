@@ -1,6 +1,6 @@
 <template>
     <div>
-      footer
+      <b-alert show>footer</b-alert>
     </div>
 </template>
 

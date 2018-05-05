@@ -39,9 +39,23 @@ export default new Router({
     //     }
     //   ]
     // }
+    //这货的作用是什么
     {
-      path:'/',
+      path:'/tt',
       component:_import('layout/AppMain'),
+      children:[
+        {
+          path:'/mytest',
+          component:_import('show/showTest'),
+          name:'mytest'
+        }
+      ]
     }
+
+    // {
+    //   path:'/mytest',
+    //   component:_import('show/showTest'),
+    //   name:'mytest'
+    // }
   ]
 })

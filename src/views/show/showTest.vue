@@ -1,12 +1,12 @@
 <template>
-    <div>top
-      <b-alert show>top.vue</b-alert>
+    <div>
+      <b-alert show>my test</b-alert>
     </div>
 </template>
 
 <script>
     export default {
-        name: "top"
+        name: "show-test"
     }
 </script>
 

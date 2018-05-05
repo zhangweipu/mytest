@@ -1,5 +1,9 @@
 <template>
-   <div>left</div>
+   <div><b-alert show>left
+   </b-alert>
+     <a href="#/mytest">test</a>
+   </div>
+
 </template>
 
 <script>

@@ -1,11 +1,9 @@
 <template>
   <section class="app-main">
-    <Top></Top>
     <transition>
       <router-view/>
     </transition>
   </section>
-
 </template>
 
 <script>

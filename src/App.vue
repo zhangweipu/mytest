@@ -1,12 +1,22 @@
 <template>
   <div id="app">
-    <top></top>
+    <Top></Top>
+    <Left></Left>
     <AppMain></AppMain>
+
+    <div>
+      <b-alert show>App.vue</b-alert>
+    </div>
+    <Footer></Footer>
   </div>
 </template>
 <script>
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
   import Left from './views/layout/left'
   import AppMain from './views/layout/AppMain'
+  import Footer from './views/layout/footer'
+  import Top from './views/layout/top'
   //导入组件
   // import hello from './components/HelloWorld'
   // import hello2 from './components/hello2'
@@ -15,7 +25,9 @@ export default {
   name: 'App',
   components:{
     Left,
-    AppMain
+    AppMain,
+    Footer,
+    Top
   },
   data () {
     return {
