@@ -20,7 +20,7 @@
   //导入组件
   // import hello from './components/HelloWorld'
   // import hello2 from './components/hello2'
-  import axios from 'axios'
+ // import axios from 'axios'
 export default {
   name: 'App',
   components:{

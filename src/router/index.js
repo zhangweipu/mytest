@@ -50,8 +50,12 @@ export default new Router({
           name:'mytest'
         }
       ]
+    },
+    {
+      path:'/test',
+      name:'test',
+      component:_import('test')
     }
-
     // {
     //   path:'/mytest',
     //   component:_import('show/showTest'),

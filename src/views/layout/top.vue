@@ -1,5 +1,5 @@
 <template>
-    <div>top
+    <div>
       <b-alert show>top.vue</b-alert>
     </div>
 </template>
