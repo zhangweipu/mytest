@@ -6,7 +6,7 @@ import router from './router'
 // import NProgress from 'nprogress' // Progress 进度条
 // import 'nprogress/nprogress.css' // Progress 进度条样
 
-
+//这是路由的进行跳转时完成的
 router.beforeEach((to,from,next)=>{
   //进度条
   console.info("请求开始")

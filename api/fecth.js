@@ -15,7 +15,7 @@ service
    .interceptors
     .request
     .use(request=>{
-
+      console.info("interceptor request")
     })
 
 //reaponse 拦截器
@@ -23,5 +23,5 @@ service
   .interceptors
   .response
   .use(request=>{
-
+      console.info("interceptor response")
   })
