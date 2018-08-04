@@ -11,5 +11,7 @@
 </script>
 
 <style scoped>
-
+ .header{
+   margin: 0px;
+ }
 </style>

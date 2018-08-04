@@ -54,7 +54,23 @@ export default new Router({
     {
       path:'/test',
       name:'test',
-      component:_import('test')
+      component:_import('test'),
+      children:[]
+    },
+    {
+      path:'/resume',
+      name:'resume',
+      component:_import('show/resume/index')
+    },
+    {
+      path:'/resume2',
+      name:'resume2',
+      component:_import('show/resume/index2')
+    },
+    {
+      path:'/resume3',
+      name:'resume3',
+      component:_import('show/resume/index3')
     }
     // {
     //   path:'/mytest',

@@ -6,7 +6,11 @@ import router from './router'
 import axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
 import '@/permission'
+import '../theme/index.css'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
+Vue.use(ElementUI)
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 

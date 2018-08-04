@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-main/>
+    <top></top>
   </div>
 </template>
 
@@ -10,7 +10,6 @@
   export default {
     name: "layout",
     components: {
-      AppMain,
       Top,
       Left,
       Footer
