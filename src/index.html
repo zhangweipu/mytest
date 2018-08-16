@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="cache-control" content="public"/>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<script src='static/tinymce/tinymce.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<body id="body">
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+
+<script>
+  // window.origin 兼容IE
+  if (window["origin"] == undefined) {
+    if (!window.location.origin) {
+      window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '')
+    }
+    window["origin"] = location.origin
+  }
+</script>
+</html>

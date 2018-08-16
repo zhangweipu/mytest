@@ -1,39 +1,132 @@
 <template>
-  <div>
+  <div class="el-main">
     <el-row :gutter="20">
-      <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="16"><div class="grid-content bg-purple-light">
-      <el-main>
-        aaaa
-      </el-main>
-      </div></el-col>
-      <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="4">
+        <div class="grid-content bg-purple"></div>
+      </el-col>
+      <el-col :span="16">
+        <div class="grid-content bg-purple-light">
+          <el-main class="div-main">
+            <el-row>
+              <el-col :span="16">
+                <div class="grid-content bg-purple">
+                  <div class="resume-title">
+                    <div class="text resume-name">officeplus</div>
+                    <div class="text resume-about">软件开发</div>
+                    <div class="text-content">
+                      热爱并擅长协调工作、经营类工作。关注用户的内容偏好，有基本的数据分析能力。喜欢新技术、新产品，对互联网产品的运营有浓厚的兴趣和热情。坚信好的互联网产品必将营造更美好的生活。
+                    </div>
+                  </div>
+                  <div class="resume resume-background">
+                    <div class="title background-title">
+                      教育背景EDUCATION&nbsp;&nbsp;--------------------------------------------
+                    </div>
+                    <div class="content background-content">
+                      <div class="content-title background">
+                        Office PLUS大学 软件工程交互艺术 硕士 2013.9-2015.6
+                      </div>
+                      <div class="content-full background">
+                        GPA 3.6/4.0 班级排名2/26 专业排名 4/50
+                      </div>
+                    </div>
+                    <div class="content background-content">
+                      <div class="content-title background">
+                        Office PLUS大学 软件工程 本科 2009.9-2013.6
+                      </div>
+                      <div class="content-full background">
+                        GPA 3.5/4.0 班级排名3/28 专业排名 6/57
+                      </div>
+                    </div>
+                  </div>
+                  <div class="resume resume-experience">
+                    <div class="title experience-title">
+                      实习经历JOB EXPERIENCE&nbsp;&nbsp;--------------------------------------
+                    </div>
+                    <div class="content experience-content">
+                      <div class="content-title experience">
+                        产品实习生：Office 产品事业部 2014.10-至今
+                      </div>
+                      <div class="content-full experience">
+                        主要职责：Office视频移动客户端产品策划工作。
+                        • 对竞品，特别是个人页面进行SWOT分析。策划个人页改版方案，并协调设计与技术实施。改版后，用户使用个人页面的频率上升35%；
+                        • 编写视频移动端与今日头条、红包等第三方合作需求PRD，并跟进实施。活动期间App周下载量提高40%，活跃用户提高50%；
+                        • 直接在句尾回车增加能容。
+
+                      </div>
+                    </div>
+                    <div class="content experience-content">
+                      <div class="content-title experience">
+                        项目策划实习生：携程业务事业部  2014.4-2014.9
+                      </div>
+                      <div class="content-full experience">
+                        主要职责：青少年海外交流及旅游项目策划和推广工作。
+                        •	深入了解目标市场，收集、分析行业数据，设计青少年国际交流产品；
+                        •	分析流量数据结构，提供产品使用反馈，为技术部调整产品开发计划提供建议；
+                        •	设计客服后台的功能和流程框架，推动技术部完成开发；
+                        •	运营社交网络账号，策划线上活动等。
+                        •	若要增加项目，直接复制之前内容粘贴在新行修改。
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="resume resume-practical">
+                    <div class="title practical-title">
+                      实践经历PRACTICAL EXPERIENCE&nbsp;&nbsp;-----------------------------
+                    </div>
+                    <div class="content practical-content">
+                      <div class="content-title practical">
+                        全国“Office高校联盟”菁英挑战赛商业策划大赛  2013.9-2013.12
+                      </div>
+                      <div class="content-full practical">
+                        全国第三 北京市第一
+                        •	统计产品的数据和优势，为团队的产品设计和商业模式的搭建提供数据支持
+                        •	完成商业广告文案的策划和广告海报的制作
+                        •	作为主讲人，带领最后的路演，并解答嘉宾问题。
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </el-col>
+              <el-col :span="8">
+                <div class="grid-content bg-purple-dark"></div>
+              </el-col>
+            </el-row>
+          </el-main>
+        </div>
+      </el-col>
+      <el-col :span="4">
+        <div class="grid-content bg-purple"></div>
+      </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
   export default {
-    name: "index"
+    name: "index",
+    data() {
+      return {}
+    }
   }
 </script>
 
 <style scoped>
-  .el-row {
-    margin-bottom: 20px;
+  .text {
+    width: 200px;
+    height: 40px;
+    font-size: 30px;
+    font-family: 微软雅黑;
+    font-style: oblique;
+    font-weight: bold;
+    color: dodgerblue;
 
-  &
-  :last-child {
-    margin-bottom: 0;
-  }
-
-  }
-  .el-col {
-    border-radius: 4px;
   }
 
   .bg-purple-dark {
     background: #99a9bf;
+    padding: 0px;
   }
 
   .bg-purple {
@@ -47,11 +140,53 @@
   .grid-content {
     border-radius: 4px;
     min-height: 36px;
-    height: 1000px;
+    height: 1200px;
+    padding-left: 40px;
+    padding-right: 10px;
+    text-align: left;
   }
 
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
+  .div-main {
+    border: #2c3e50 solid 1px;
+    height: 1200px;
+  }
+
+  .text-content {
+    text-align: left;
+    padding-top: 20px;
+    height: 100px;
+    line-height: 30px;
+    margin-top: 60px;
+  }
+
+  .resume {
+
+  }
+
+  .title {
+    height: 30px;
+    font-family: 微软雅黑;
+    font-size: 25px;
+    color: #409eff;
+    font-weight: bold;
+  }
+
+  .background-title {
+    margin-top: -50px;
+  }
+
+  .content {
+
+  }
+
+  .content-title {
+    font-weight: bold;
+    margin-top: 10px;
+    height: auto;
+  }
+
+  .content-full {
+    height: 30px;
+    line-height: 30px;
   }
 </style>

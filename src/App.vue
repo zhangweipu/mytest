@@ -2,7 +2,7 @@
   <div id="app">
     <Top></Top>
 
-    <el-container style="height: 600px; border: 1px solid #eee">
+    <el-container style="height: 1200px; border: 1px solid #eee">
       <Left></Left>
       <!--<el-aside width="200px"><Left></Left></el-aside>-->
       <el-container>

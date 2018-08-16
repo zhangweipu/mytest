@@ -7,6 +7,8 @@ import axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
 import '@/permission'
 import '../theme/index.css'
+import 'lib-flexible'
+import 'lib-flexible/flexible.js'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
