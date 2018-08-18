@@ -26,7 +26,7 @@
                         Office PLUS大学 软件工程交互艺术 硕士 2013.9-2015.6
                       </div>
                       <div class="content-full background">
-                        GPA 3.6/4.0 班级排名2/26 专业排名 4/50
+                        <span>GPA 3.6/4.0 班级排名2/26 专业排名 4/50</span>
                       </div>
                     </div>
                     <div class="content background-content">
@@ -47,50 +47,56 @@
                         产品实习生：Office 产品事业部 2014.10-至今
                       </div>
                       <div class="content-full experience">
-                        主要职责：Office视频移动客户端产品策划工作。
-                        • 对竞品，特别是个人页面进行SWOT分析。策划个人页改版方案，并协调设计与技术实施。改版后，用户使用个人页面的频率上升35%；
-                        • 编写视频移动端与今日头条、红包等第三方合作需求PRD，并跟进实施。活动期间App周下载量提高40%，活跃用户提高50%；
-                        • 直接在句尾回车增加能容。
+                        <span>主要职责：Office视频移动客户端产品策划工作。</span>
+                        <ul>
+                          <li>对竞品，特别是个人页面进行SWOT分析。策划个人页改版方案，并协调设计与技术实施。改版后，用户使用个人页面的频率上升35%；</li>
+                          <li>编写视频移动端与今日头条、红包等第三方合作需求PRD，并跟进实施。活动期间App周下载量提高40%，活跃用户提高50%；</li>
+                          <li>直接在句尾回车增加能容。</li>
+                        </ul>
 
                       </div>
-                    </div>
-                    <div class="content experience-content">
+
                       <div class="content-title experience">
-                        项目策划实习生：携程业务事业部  2014.4-2014.9
+                        产品实习生：Office 产品事业部 2014.10-至今
                       </div>
                       <div class="content-full experience">
-                        主要职责：青少年海外交流及旅游项目策划和推广工作。
-                        •	深入了解目标市场，收集、分析行业数据，设计青少年国际交流产品；
-                        •	分析流量数据结构，提供产品使用反馈，为技术部调整产品开发计划提供建议；
-                        •	设计客服后台的功能和流程框架，推动技术部完成开发；
-                        •	运营社交网络账号，策划线上活动等。
-                        •	若要增加项目，直接复制之前内容粘贴在新行修改。
-
+                        <span>主要职责：Office视频移动客户端产品策划工作。</span>
+                        <li>对竞品，特别是个人页面进行SWOT分析。策划个人页改版方案，并协调设计与技术实施。改版后，用户使用个人页面的频率上升35%；</li>
+                        <li>编写视频移动端与今日头条、红包等第三方合作需求PRD，并跟进实施。活动期间App周下载量提高40%，活跃用户提高50%；</li>
+                        <li>直接在句尾回车增加能容。</li>
 
                       </div>
                     </div>
+
                   </div>
-                  <div class="resume resume-practical">
-                    <div class="title practical-title">
-                      实践经历PRACTICAL EXPERIENCE&nbsp;&nbsp;-----------------------------
-                    </div>
-                    <div class="content practical-content">
-                      <div class="content-title practical">
-                        全国“Office高校联盟”菁英挑战赛商业策划大赛  2013.9-2013.12
+                  <div class="resume resume-practice">
+                    <div class="resume resume-experience">
+                      <div class="title experience-title">
+                        实践经历PRACTICAL EXPERIENCE&nbsp;&nbsp;--------------------------------------
                       </div>
-                      <div class="content-full practical">
-                        全国第三 北京市第一
-                        •	统计产品的数据和优势，为团队的产品设计和商业模式的搭建提供数据支持
-                        •	完成商业广告文案的策划和广告海报的制作
-                        •	作为主讲人，带领最后的路演，并解答嘉宾问题。
+                      <div class="content experience-content">
+                        <div class="content-title experience">
+                          全国“Office高校联盟”菁英挑战赛商业策划大赛
+                        </div>
+                        <div class="content-full experience">
+                          <ul>
+                            <li>统计产品的数据和优势，为团队的产品设计和商业模式的搭建提供数据支持</li>
+                            <li>完成商业广告文案的策划和广告海报的制作</li>
+                            <li>作为主讲人，带领最后的路演，并解答嘉宾问题。</li>
+                          </ul>
 
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </el-col>
               <el-col :span="8">
-                <div class="grid-content bg-purple-dark"></div>
+                <div class="grid-content bg-purple-dark">
+                  <div class="avatar">
+                    <img src="/static/logo.png"/>
+                  </div>
+                </div>
               </el-col>
             </el-row>
           </el-main>
@@ -107,12 +113,32 @@
   export default {
     name: "index",
     data() {
-      return {}
-    }
+      return {
+        width1: 20,
+        width2: 20
+      }
+    },
+
+    computed: {}
   }
 </script>
 
 <style scoped>
+
+  img {
+    width: auto;
+    height: auto;
+    max-width: 260px;
+    max-height: 260px;
+ -webkit-border-radius: 100%;
+
+
+  }
+  .avatar{
+    width: 260px;
+    height: 260px;
+  }
+
   .text {
     width: 200px;
     height: 40px;
@@ -144,6 +170,7 @@
     padding-left: 40px;
     padding-right: 10px;
     text-align: left;
+    width: auto;
   }
 
   .div-main {
@@ -160,7 +187,12 @@
   }
 
   .resume {
+    line-height: normal;
+  }
 
+  ul {
+    margin: 0px 0px 0px 20px;
+    padding: 0px;
   }
 
   .title {
@@ -169,24 +201,31 @@
     font-size: 25px;
     color: #409eff;
     font-weight: bold;
+    float: left;
   }
 
   .background-title {
-    margin-top: -50px;
+
   }
 
   .content {
+    width: auto;
 
   }
 
   .content-title {
     font-weight: bold;
-    margin-top: 10px;
-    height: auto;
+    width: auto;
+    float: left;
+    clear: both;
+    margin-top: 5px;
+
   }
 
   .content-full {
-    height: 30px;
     line-height: 30px;
+    width: auto;
+    float: left;
+    clear: both;
   }
 </style>
