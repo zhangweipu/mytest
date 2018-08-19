@@ -94,7 +94,57 @@
               <el-col :span="8">
                 <div class="grid-content bg-purple-dark">
                   <div class="avatar">
-                    <img src="/static/logo.png"/>
+                    <img src="/static/lauch.png"/>
+                  </div>
+                  <div class="person-message">
+                    <span class="el-icon-location">北京市海淀区中关村科技园</span>
+                  </div>
+                  <div class="person-message">
+                    <span class="el-icon-mobile-phone">18010001000</span>
+                  </div>
+                  <div class="person-message">
+                    <span class="el-icon-message">officeplus@microsoft.com</span>
+                  </div>
+                  <div class="person-message">
+                    <span class="el-icon-location-outline">江苏省 扬州市</span>
+                  </div>
+                  <div class="person-message">
+                    <span class="el-icon-date">1992.06.22</span>
+                  </div>
+                  <div class="skills">
+                    <div class="title2">技能SKILLS-------------</div>
+                    <div class="skill">
+                      <div class="label">英语</div>
+                      <div class="percent">
+                        <el-progress :percentage="80" color="#8e71c7"></el-progress>
+                      </div>
+                    </div>
+                    <div class="skill">
+                      <div class="label">AE</div>
+                      <div class="percent">
+                        <el-progress :percentage="80" color="#8e71c7"></el-progress>
+                      </div>
+                    </div>
+                    <div class="skill">
+                      <div class="label">AI</div>
+                      <div class="percent">
+                        <el-progress :percentage="80" color="#8e71c7"></el-progress>
+                      </div>
+                    </div>
+                    <div class="skill">
+                      <div class="label">Office</div>
+                      <div class="percent">
+                        <el-progress :percentage="80" color="#8e71c7"></el-progress>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="honors">
+                    <div class="title2">荣誉AWARDS----</div>
+                    <div class="honor"><span>2014  校级优秀学生干事</span></div>
+                    <div class="honor"><span>2014  院级优秀学生干事</span></div>
+                    <div class="honor"><span>2014  优秀学习奖学金三等奖</span></div>
+                    <div class="honor"><span>2013  校优秀团支书</span></div>
+                    <div class="honor"><span>2012  全国数学建模比赛二等奖</span></div>
                   </div>
                 </div>
               </el-col>
@@ -125,18 +175,54 @@
 
 <style scoped>
 
+  .skill {
+    line-height: normal;
+    margin: 10px;
+  }
+
+  .title2 {
+    line-height: normal;
+    clear: both;
+    height: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: blue;
+    margin-bottom: 20px;
+  }
+
+  .person-message {
+    height: 20px;
+    font-size: 15px;
+    color: blue;
+    margin-top: 10px;
+  }
+
+  span {
+    line-height: normal;
+    display: block;
+  }
+
+  .honor {
+  margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
   img {
     width: auto;
     height: auto;
-    max-width: 260px;
-    max-height: 260px;
- -webkit-border-radius: 100%;
-
+    max-width: 200px;
+    max-height: 200px;
+    -webkit-border-radius: 100%;
 
   }
-  .avatar{
-    width: 260px;
-    height: 260px;
+
+  .avatar {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: 20px;
+    left: 10px;
+    margin-bottom: 50px;
   }
 
   .text {
@@ -167,7 +253,7 @@
     border-radius: 4px;
     min-height: 36px;
     height: 1200px;
-    padding-left: 40px;
+    padding-left: 30px;
     padding-right: 10px;
     text-align: left;
     width: auto;
