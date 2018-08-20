@@ -263,4 +263,29 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 
 ## LICENSE
 [MIT](LICENSE)
+1、安装最新的nodejs，官网下载最新的nodejs安装
+2、安装npm（注：windows安装包里自带npm，此步省略）
+3、配置代理（非代理环境此步省略）
+配置环境变更：npm_config_proxy=http://server:port
+或命令行配置：npm --proxy http://server:port
+4、安装cnpm（淘宝的npm镜像，国外npm库下载速度慢）
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+5、全局安装webpack
+cnpm install webpack -g
+6、安装安装vue脚手架
+cnpm install vue-cli -g
+
+7、在硬盘上找一个文件夹放工程用的，在终端中进入该目录
+cd 目录路径
+8、根据模板创建项目
+vue init webpack-simple 工程名字<工程名字不能用中文>
+9、进入工程目录，安装包依赖
+cnpm install
+10、启动项目
+npm run dev
+
+更新插件
+1、更新npm：npm update -g
+2、更新vue-cli：npm update vue-cli
+3、查看版本：npm view vue-cli
 
