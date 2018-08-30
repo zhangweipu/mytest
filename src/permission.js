@@ -16,6 +16,6 @@ router.beforeEach((to,from,next)=>{
 
 router.afterEach(()=>{
   console.info("请求结束")
-  next()
+
  // NProgress.end();
 })

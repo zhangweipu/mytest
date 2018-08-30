@@ -1,31 +1,31 @@
 <template>
   <div class="el-date-editor">
-    <!--面包屑 导航栏-->
+    <!--&lt;!&ndash;面包屑 导航栏&ndash;&gt;-->
     <el-row class="warp">
-      <el-col :span="24" class="warp-breadcrum">
-        <el-breadcrumb separator=">">
-          <el-breadcrumb-item :to="{path:'/home'}"><b>首页</b></el-breadcrumb-item>
-          <el-breadcrumb-item :to="{path: '/aboutus/aboutlist'}">关于我们</el-breadcrumb-item>
-          <el-breadcrumb-item>添加关于我们</el-breadcrumb-item>
-        </el-breadcrumb>
-      </el-col>
+      <!--<el-col :span="24" class="warp-breadcrum">-->
+      <!--<el-breadcrumb separator=">">-->
+      <!--<el-breadcrumb-item :to="{path:'/home'}"><b>首页</b></el-breadcrumb-item>-->
+      <!--<el-breadcrumb-item :to="{path: '/aboutus/aboutlist'}">关于我们</el-breadcrumb-item>-->
+      <!--<el-breadcrumb-item>添加关于我们</el-breadcrumb-item>-->
+      <!--</el-breadcrumb>-->
+      <!--</el-col>-->
       <!--
       Form 组件提供了表单验证的功能，只需要通过 rule 属性传入约定的验证规则，并 Form-Item 的 prop 属性设置为需校验的字段名即可。具体可以参考官网：http://element.eleme.io/#/zh-CN/component/form
       -->
       <el-col :span="24" class="warp-main">
         <el-form ref="infoForm" :model="infoForm" :rules="rules" label-width="120px">
-          <el-form-item label="标题" prop="a_title">
-            <el-input v-model="infoForm.a_title"></el-input>
+          <el-form-item label="标题" prop="title">
+            <el-input v-model="infoForm.title"></el-input>
           </el-form-item>
 
-          <el-form-item label="来源" prop="a_source">
-            <el-input v-model="infoForm.a_source"></el-input>
+          <el-form-item label="来源" prop="source">
+            <el-input v-model="infoForm.source"></el-input>
           </el-form-item>
           <!--使用编辑器
           -->
           <el-form-item label="详细">
             <div class="edit_container">
-              <quill-editor v-model="infoForm.a_content"
+              <quill-editor v-model="infoForm.content"
                             ref="myQuillEditor"
                             class="editer"
                             :options="editorOption" @ready="onEditorReady($event)">
@@ -45,28 +45,36 @@
 </template>
 
 <script>
-  import { quillEditor } from 'vue-quill-editor' //调用编辑器
+  import {quillEditor} from 'vue-quill-editor' //调用编辑器
+  import {mapGetters, mapActions} from 'vuex'
+
   export default {
     data() {
       return {
         infoForm: {
-          a_title: '',
-          a_source: '',
-          a_content:'',
-          editorOption: {}
+          title: '',
+          source: '',
+          content: ''
+
         },
+        editorOption: {
+          placeholder: 'Compose an epic...',
+          theme: 'snow'  // or 'bubble'
+        },
+        msg:'',
         //表单验证
         rules: {
-          a_title: [
+          title: [
             {required: true, message: '请输入标题', trigger: 'blur'}
           ],
-          a_content: [
+          content: [
             {required: true, message: '请输入详细内容', trigger: 'blur'}
           ]
         },
       }
     },
     computed: {
+      ...mapGetters(['article']),
       editor() {
         return this.$refs.myQuillEditor.quill
       }
@@ -75,29 +83,20 @@
       //初始化
     },
     methods: {
+      ...mapActions(['addArticleAction']),
       onEditorReady(editor) {
       },
       onSubmit() {
-        //提交
-//this.$refs.infoForm.validate，这是表单验证
-        this.$refs.infoForm.validate((valid) => {
-          if(valid) {
-            this.$post('m/add/about/us',this.infoForm).then(res => {
-              if(res.errCode == 200) {
-                this.$message({
-                  message: res.errMsg,
-                  type: 'success'
-                });
-                this.$router.push('/aboutus/aboutlist');
-              } else {
-                this.$message({
-                  message: res.errMsg,
-                  type:'error'
-                });
-              }
-            });
-          }
-        });
+        alert("here")
+        var keyword = {
+          "title": "aaa",
+          "source": "source",
+          "content": "content"
+        }
+        this.addArticleAction(keyword).then(res => {
+          console.info(res)
+
+        })
       }
     },
     components: {
@@ -107,6 +106,13 @@
   }
 </script>
 <style>
+  .edit_container {
 
+  }
+
+  .editer {
+    height: 200px;
+    background: white;
+  }
 </style>
 

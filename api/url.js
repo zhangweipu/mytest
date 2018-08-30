@@ -1,4 +1,7 @@
+const serverUrl="http://localhost:8087"
+
 //放url的
-export const url={
-  testUrl:"wwwwwww"
+module.exports ={
+  testUrl:"wwwwwww",
+  addArticle:serverUrl+"/admin/addArticle"
 }

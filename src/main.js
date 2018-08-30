@@ -20,6 +20,10 @@ require('../node_modules/quill/dist/quill.bubble.css')
 // import 'quill/dist/quill.core.css'
 // import 'quill/dist/quill.snow.css'
 // import 'quill/dist/quill.bubble.css'
+import store from './store'
+// new Vue({
+//   store
+// })
 
 Vue.use(VueQuillEditor)
 Vue.use(ElementUI)
@@ -30,6 +34,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

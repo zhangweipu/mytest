@@ -14,6 +14,7 @@ module.exports = {
     proxyTable: {
       '/api': {
         target: 'http://localhost:8086',
+        //这是前端解决跨域
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

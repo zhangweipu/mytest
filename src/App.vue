@@ -14,7 +14,7 @@
     <!--<div>-->
     <!--<b-alert show>App.vue</b-alert>-->
     <!--</div>-->
-    <Footer></Footer>
+    <!--<Footer></Footer>-->
   </div>
 </template>
 <script>
@@ -33,7 +33,6 @@
   export default {
     name: 'App',
     components: {
-      Footer,
       AppMain,
       Layout,
       Top,
