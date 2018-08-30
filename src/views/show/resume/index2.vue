@@ -87,15 +87,8 @@
       onEditorReady(editor) {
       },
       onSubmit() {
-        alert("here")
-        var keyword = {
-          "title": "aaa",
-          "source": "source",
-          "content": "content"
-        }
-        this.addArticleAction(keyword).then(res => {
+        this.addArticleAction(this.infoForm).then(res => {
           console.info(res)
-
         })
       }
     },
