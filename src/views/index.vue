@@ -1,19 +1,34 @@
 <template>
-  <section class="app-main">
-    <transition>
-      <router-view/>
-    </transition>
-  </section>
+  <div>
+  <Top></Top>
+
+  <el-container style="height: 1200px; border: 1px solid #eee">
+    <Left></Left>
+    <!--<el-aside width="200px"><Left></Left></el-aside>-->
+    <el-container>
+      <!--<el-header><Top></Top></el-header>-->
+      <el-main><AppMain></AppMain></el-main>
+      <!--<el-footer><Footer></Footer></el-footer>-->
+    </el-container>
+  </el-container>
+  <!--<div>-->
+  <!--<b-alert show>App.vue</b-alert>-->
+  <!--</div>-->
+  </div>
 </template>
 
 <script>
-  import Top from './top'
-  export default {
-    name: "app-main",
-    components:{
-      Top
+  import Left from './layout/left'
+  import AppMain from './layout/AppMain'
+  import Top from './layout/top'
+    export default {
+        name: "index",
+      components: {
+        AppMain,
+        Top,
+        Left
+      },
     }
-  }
 </script>
 
 <style scoped>
