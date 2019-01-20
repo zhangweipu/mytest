@@ -23,20 +23,19 @@
           </el-form-item>
           <!--使用编辑器
           -->
-          <el-form-item label="详细">
-            <div class="edit_container">
+          <el-form-item label="详细"  >
+            <div class="edit_container" >
               <quill-editor v-model="infoForm.content"
                             ref="myQuillEditor"
-                            class="editer"
+                            class="editer" style="background: white"
                             :options="editorOption" @ready="onEditorReady($event)">
               </quill-editor>
             </div>
           </el-form-item>
-
-          <el-form-item>
-            <el-button type="primary" @click="onSubmit">确认提交</el-button>
-          </el-form-item>
         </el-form>
+
+          <el-button type="primary" @click="onSubmit">确认提交</el-button>
+
       </el-col>
 
 
@@ -103,12 +102,11 @@
 </script>
 <style>
   .edit_container {
-
+    height: 100%;
   }
 
   .editer {
-    height: 200px;
-    background: white;
+    height: 400px;
   }
 </style>
 
