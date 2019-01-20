@@ -89,6 +89,9 @@
       onSubmit() {
         this.addArticleAction(this.infoForm).then(res => {
           console.info(res)
+          if (res.data.code==1||true){
+            this.$router.push('/resume')
+          }
         })
       }
     },

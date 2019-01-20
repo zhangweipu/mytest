@@ -1,19 +1,22 @@
 <template>
   <div>
-  <Top></Top>
+    <Top></Top>
 
-  <el-container style="height: 1200px; border: 1px solid #eee">
-    <Left></Left>
-    <!--<el-aside width="200px"><Left></Left></el-aside>-->
-    <el-container>
-      <!--<el-header><Top></Top></el-header>-->
-      <el-main><AppMain></AppMain></el-main>
-      <!--<el-footer><Footer></Footer></el-footer>-->
+    <el-container style=" border: 1px solid #eee">
+      <Left></Left>
+      <!--<el-aside width="200px"><Left></Left></el-aside>-->
+      <el-container>
+        <!--<el-header><Top></Top></el-header>-->
+        <el-main>
+          <AppMain></AppMain>
+        </el-main>
+        <!--<el-footer><Footer></Footer></el-footer>-->
+      </el-container>
     </el-container>
-  </el-container>
-  <!--<div>-->
-  <!--<b-alert show>App.vue</b-alert>-->
-  <!--</div>-->
+    {{windowHeight}}
+    <!--<div>-->
+    <!--<b-alert show>App.vue</b-alert>-->
+    <!--</div>-->
   </div>
 </template>
 
@@ -21,14 +24,33 @@
   import Left from './layout/left'
   import AppMain from './layout/AppMain'
   import Top from './layout/top'
-    export default {
-        name: "index",
-      components: {
-        AppMain,
-        Top,
-        Left
+
+  export default {
+    name: "index",
+    components: {
+      AppMain,
+      Top,
+      Left
+    },
+    data() {
+      return {
+        windowHeight: ''
+      }
+    },
+    methods: {
+      getHeight() {
+        this.windowHeight = window.innerHeight + 300 + 'px';
+        console.log('hegiht', this.windowHeight)
       },
+    },
+    created() {
+      window.addEventListener('resize', this.getHeight);
+      this.getHeight()
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.getHeight)
     }
+  }
 </script>
 
 <style scoped>
@@ -65,6 +87,7 @@
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
   }
+
   .el-header {
     background-color: #B3C0D1;
     color: #333;
@@ -74,15 +97,18 @@
   .el-aside {
     color: #333;
   }
-  ::-webkit-scrollbar{
+
+  ::-webkit-scrollbar {
     width: 5px;
     background: red;
   }
-  ::-webkit-scrollbar-track{
-    border-radius:10px;
+
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
     background: #2c3e50;
   }
-  ::-webkit-scrollbar-thumb{
+
+  ::-webkit-scrollbar-thumb {
     background: #8c939d;
   }
 </style>

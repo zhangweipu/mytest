@@ -9,6 +9,7 @@
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+
   //导入组件
   import Layout from './views/layout/Layout'
   // import hello from './components/HelloWorld'

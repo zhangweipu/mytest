@@ -39,48 +39,53 @@ export default new Router({
     //     }
     //   ]
     // }
+    {
+      path: '/single',
+      name: '这是主页',
+      component: _import('single/singleindex')
+    },
     //这货的作用是什么
     {
-      path:'/login',
-      name:'登陆',
-      component:_import('login')
+      path: '/login',
+      name: '登陆',
+      component: _import('login')
     },
     {
-      path:'/tt',
-      component:_import('layout/AppMain'),
-      children:[
+      path: '/tt',
+      component: _import('layout/AppMain'),
+      children: [
         {
-          path:'/mytest',
-          component:_import('show/showTest'),
-          name:'mytest'
+          path: '/mytest',
+          component: _import('show/showTest'),
+          name: 'mytest'
         }
       ]
     },
     {
-      path:'/index',
-      component:_import('index'),
-      name:'index',
-      children:[
+      path: '/index',
+      component: _import('index'),
+      name: 'index',
+      children: [
         {
-          path:'/test',
-          name:'test',
-          component:_import('test'),
-          children:[]
+          path: '/test',
+          name: 'test',
+          component: _import('test'),
+          children: []
         },
         {
-          path:'/resume',
-          name:'resume',
-          component:_import('show/resume/index')
+          path: '/resume',
+          name: 'resume',
+          component: _import('show/resume/index')
         },
         {
-          path:'/resume2',
-          name:'resume2',
-          component:_import('show/resume/index2')
+          path: '/resume2',
+          name: 'resume2',
+          component: _import('show/resume/index2')
         },
         {
-          path:'/resume3',
-          name:'resume3',
-          component:_import('show/resume/index3')
+          path: '/resume3',
+          name: 'resume3',
+          component: _import('show/resume/index3')
         }
       ]
     }

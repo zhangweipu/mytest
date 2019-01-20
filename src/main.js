@@ -11,8 +11,9 @@ import 'lib-flexible'
 import 'lib-flexible/flexible.js'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import  VueQuillEditor from 'vue-quill-editor'
 // require styles 引入样式
+import VueQuillEditor from 'vue-quill-editor'
+
 
 require('../node_modules/quill/dist/quill.core.css')
 require('../node_modules/quill/dist/quill.snow.css')
