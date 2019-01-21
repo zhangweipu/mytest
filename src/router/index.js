@@ -42,6 +42,7 @@ export default new Router({
     {
       path: '/single',
       name: '这是主页',
+      title:'single',
       component: _import('single/singleindex')
     },
     //这货的作用是什么
