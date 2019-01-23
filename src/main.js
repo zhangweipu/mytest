@@ -13,6 +13,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // require styles 引入样式
 import VueQuillEditor from 'vue-quill-editor'
+import Vues from 'vue-resource'
 
 
 require('../node_modules/quill/dist/quill.core.css')
@@ -22,22 +23,29 @@ require('../node_modules/quill/dist/quill.bubble.css')
 // import 'quill/dist/quill.snow.css'
 // import 'quill/dist/quill.bubble.css'
 import store from './store'
+import response from "vue-resource/src/http/response";
 // new Vue({
 //   store
 // })
 
+Vue.use(axios)
 Vue.use(VueQuillEditor)
 Vue.use(ElementUI)
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
-
+axios.interceptors.request.use(config=>{
+  console.info("aaaa")
+  debugger
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  axios,
+  components: {App},
   template: '<App/>'
 })
+
 
 

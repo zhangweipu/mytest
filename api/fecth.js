@@ -2,6 +2,7 @@
 //发送http请求
 import axios from 'axios'
 import store from '../src/store/index'
+import response from "vue-resource/src/http/response";
 
 const config = require('../config/index')
 
@@ -17,8 +18,18 @@ service
   .request
   .use(request => {
     console.info("interceptor request")
+    var url = request.url;
+    var author = localStorage.getItem("user");
+    console.info("用户", author)
+    if (author != null && author != '') {
+      request.headers["user"] = author
+    } else if (url.match('/admin/*')) {
+      this.$router.push({path: "/login"})
+    }
+
+
     return request;
-  },error => {
+  }, error => {
     console.info("error")
     return request
   })
@@ -29,8 +40,9 @@ service
   .response
   .use(request => {
     console.info("interceptor response")
+    console.info(response)
     return request;
-  },error => {
+  }, error => {
     console.info("response error")
   })
 export default service

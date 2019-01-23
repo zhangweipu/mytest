@@ -11,6 +11,7 @@
         <el-form-item>
           <el-button type="primary" @click="submitForm('formdata')">提交</el-button>
           <el-button @click="resetForm('formdata')">重置</el-button>
+          <el-button @click="test">测试</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -18,6 +19,8 @@
 </template>
 
 <script>
+  import {mapGetters, mapActions} from 'vuex'
+
   export default {
     name: "login",
     data() {
@@ -27,7 +30,6 @@
           console.info("登陆名为空！！！")
           return callback(new Error('登陆名不能为空'));
         }
-        console.info("登陆不能为空" + value)
         callback();
       };
       var checkpasswd = (rule, value, callback) => {
@@ -35,7 +37,6 @@
           console.info("密码为空！！")
           return callback(new Error('密码不能为空！'))
         }
-        console.info("密码不为空" + value)
         callback();
       };
 
@@ -52,12 +53,26 @@
         }
       }
     },
-
+    computed: {
+      ...mapGetters(['$validate'])
+    },
     methods: {
+      ...mapActions(['loginsys']),
+      test() {
+
+      },
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
+            this.loginsys(this.formdata).then(res => {
+              if (res.code == 1) {
+                sessionStorage.setItem('user', res.username)
+                this.$router.push({path: "/index"})
+              } else {
+                alert(res.msg)
+                this.$router.push({path: "/login"})
+              }
+            })
           } else {
             console.log('error submit!!');
             return false;
@@ -79,8 +94,9 @@
     background-repeat: no-repeat;
     background-position: center;
   }
-  .login{
-    background-color:#e1f3d8;
+
+  .login {
+    background-color: #e1f3d8;
     height: 200px;
     width: 300px;
     position: absolute;

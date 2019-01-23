@@ -140,11 +140,11 @@
     },
     //使用的是getters.js中放入的值，通过mutations中的数据实现联动的
     computed: {
-      ...mapGetters(['$single', '$article'])
+      ...mapGetters(['$single', '$article', '$validate'])
     },
     methods: {
       //demo.js中放入actions的方法调用使用方法名
-      ...mapActions(['singleaction', 'getSentence']),
+      ...mapActions(['singleaction', 'getSentence', 'loginsys']),
       getHeight() {
         this.height1 = window.innerHeight + 'px';
         console.log('hegiht', this.height1)
@@ -153,7 +153,7 @@
         var data = {
           'str': 'here'
         }
-        this.singleaction(data).then(res => {
+        this.loginsys(data).then(res => {
 
         })
       },
@@ -186,17 +186,18 @@
 
 </script>
 <style scoped>
-  .ql-editor{
+  .ql-editor {
     font-size: small;
     color: red;
   }
+
   .links {
     font-size: xx-large;
     float: left;
     margin-left: 20px;
   }
 
-  .article p{
+  .article p {
     height: 30px;
   }
 

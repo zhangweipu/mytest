@@ -4,6 +4,7 @@ import getters from './getters'
 import demo from './modules/demo'
 import $article from './modules/article'
 import $single from './modules/singlestore'
+import $validate from './modules/validatestore'
 
 
 Vue.use(Vuex);
@@ -13,7 +14,8 @@ const store = new Vuex.Store({
   modules: {
     demo,
     $article,
-    $single
+    $single,
+    $validate
   },
   getters
 });
