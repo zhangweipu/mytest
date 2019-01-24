@@ -6,7 +6,7 @@
     </el-radio-group>
     <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
              :collapse="isCollapse">
-      <el-submenu index="1">
+      <el-submenu index="1" style="font-size: xx-large">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span slot="title">导航一</span>
@@ -46,6 +46,7 @@
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 250px;
     min-height: 400px;
+    font-size: xx-large;
   }
 </style>
 

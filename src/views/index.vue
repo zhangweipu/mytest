@@ -1,19 +1,23 @@
 <template>
   <div>
-    <Top></Top>
 
-    <el-container style=" border: 1px solid #eee">
-      <Left></Left>
+    <el-container style=" border: 1px solid #eee" v-bind:style="{height:windowHeight}">
+      <!--<Left></Left>-->
       <!--<el-aside width="200px"><Left></Left></el-aside>-->
-      <el-container>
-        <!--<el-header><Top></Top></el-header>-->
-        <el-main>
-          <AppMain></AppMain>
-        </el-main>
-        <!--<el-footer><Footer></Footer></el-footer>-->
-      </el-container>
+      <!--<el-header><Top></Top></el-header>-->
+      <el-header style="height: auto;background-color: white">
+        <Top></Top>
+      </el-header>
+      <el-main>
+        <el-breadcrumb separator-class="el-icon-arrow-right" style="margin-bottom: 30px;margin-left: 200px">
+          <el-breadcrumb-item v-for="(item) in levelList" :key="item.path" v-if="item.meta.title">
+            <router-link :to="item.redirect||item.path">{{item.meta.title}}</router-link>
+          </el-breadcrumb-item>
+        </el-breadcrumb>
+        <AppMain></AppMain>
+      </el-main>
+      <!--<el-footer><Footer></Footer></el-footer>-->
     </el-container>
-    {{windowHeight}}
     <!--<div>-->
     <!--<b-alert show>App.vue</b-alert>-->
     <!--</div>-->
@@ -34,14 +38,32 @@
     },
     data() {
       return {
-        windowHeight: ''
+        windowHeight: '',
+        levelList: null,
+        imgUrl:"/static/image/bg-img-06.jpg"
       }
     },
     methods: {
       getHeight() {
-        this.windowHeight = window.innerHeight + 300 + 'px';
+        this.windowHeight = window.innerHeight +'px';
         console.log('hegiht', this.windowHeight)
       },
+      getBreadcrumb() {
+        let matched = this.$route.matched.filter(item => item.name)
+        const first = matched[0]
+        if (first && first.name !== '首页') {
+          matched = [{path: '/home', meta: {title: '首页'}}].concat(matched)
+        }
+        this.levelList = matched;
+      }
+    },
+    mounted() {
+      this.getBreadcrumb();
+    },
+    watch: {
+      $route(to, from) {
+        this.getBreadcrumb();
+      }
     },
     created() {
       window.addEventListener('resize', this.getHeight);

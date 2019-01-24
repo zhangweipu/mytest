@@ -42,8 +42,13 @@ export default new Router({
     {
       path: '/single',
       name: '这是主页',
-      title:'single',
+      title: 'single',
       component: _import('single/singleindex')
+    },
+    {
+      path: '/resume',
+      name: 'resume',
+      component: _import('show/resume/index')
     },
     //这货的作用是什么
     {
@@ -63,32 +68,40 @@ export default new Router({
       ]
     },
     {
-      path: '/index',
+      path: '/',
       component: _import('index'),
+      redirect: 'home',
       name: 'index',
       children: [
         {
-          path: '/test',
+          path: '/home',
+          component: _import('home'),
+          name: "home"
+        },
+        {
+          path: '/home/test',
           name: 'test',
           component: _import('test'),
           children: []
         },
+
         {
-          path: '/resume',
-          name: 'resume',
-          component: _import('show/resume/index')
+          path: '/home/resume2',
+          name: '编辑文档',
+          component: _import('show/resume/index2'),
+          meta: {title: "编辑文档"}
         },
         {
-          path: '/resume2',
-          name: 'resume2',
-          component: _import('show/resume/index2')
-        },
-        {
-          path: '/resume3',
+          path: '/home/resume3',
           name: 'resume3',
           component: _import('show/resume/index3')
         }
       ]
+    },
+    {
+      path: '*',
+      name:'404',
+      component: _import('404')
     }
 
     // {

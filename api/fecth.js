@@ -23,9 +23,10 @@ service
     console.info("用户", author)
     if (author != null && author != '') {
       request.headers["user"] = author
-    } else if (url.match('/admin/*')) {
-      this.$router.push({path: "/login"})
     }
+    // else if (url.match('/admin/*')) {
+    //   this.$router.push({path: "/login"})
+    // }
 
 
     return request;
