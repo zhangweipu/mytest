@@ -14,6 +14,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 // require styles 引入样式
 import VueQuillEditor from 'vue-quill-editor'
 import Vues from 'vue-resource'
+import common from './common'
 
 
 require('../node_modules/quill/dist/quill.core.css')
@@ -32,8 +33,9 @@ Vue.use(axios)
 Vue.use(VueQuillEditor)
 Vue.use(ElementUI)
 Vue.use(BootstrapVue)
+Vue.use(common)
 Vue.config.productionTip = false
-axios.interceptors.request.use(config=>{
+axios.interceptors.request.use(config => {
   console.info("aaaa")
   debugger
 })

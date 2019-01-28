@@ -43,7 +43,16 @@ export default new Router({
       path: '/single',
       name: '这是主页',
       title: 'single',
-      component: _import('single/singleindex')
+      component: _import('single/singleindex'),
+      children: [
+        {
+          path: '/single/dictionary',
+          name: '字典',
+          title: 'dictionary',
+          component: _import('single/otherfunction/dictionary')
+        }
+      ]
+
     },
     {
       path: '/resume',
@@ -100,7 +109,7 @@ export default new Router({
     },
     {
       path: '*',
-      name:'404',
+      name: '404',
       component: _import('404')
     }
 

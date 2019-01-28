@@ -1,12 +1,15 @@
 <template>
   <div class="load" style="border: red">
     <div class="login" style="border: red solid">
-      <el-form :model="formdata" status-icon :rules="rules" label-width="100px" class="demo-ruleForm" style="margin: 20px">
+      <el-form ref="formdata" :model="formdata" status-icon :rules="rules" label-width="100px" class="demo-ruleForm"
+               style="margin: 20px">
         <el-form-item label="登录名:" prop="username">
-          <el-input type="text" v-model="formdata.username" style="height:10px;width: 150px;margin-left: -100px;padding: 0px"></el-input>
+          <el-input type="text" v-model="formdata.username"
+                    style="height:10px;width: 150px;margin-left: -100px;padding: 0px"></el-input>
         </el-form-item>
         <el-form-item label="密码:" prop="passwd">
-          <el-input type="password" v-model="formdata.passwd" auto-complete="off" style="width: 150px;margin-left: -100px"></el-input>
+          <el-input type="password" v-model="formdata.passwd" auto-complete="off"
+                    style="width: 150px;margin-left: -100px"></el-input>
         </el-form-item>
         <el-form-item style="margin-left: -100px;margin-top: -10px">
           <el-button type="primary" @click="submitForm('formdata')">提交</el-button>
@@ -62,6 +65,7 @@
 
       },
       submitForm(formName) {
+        //el-form 放 ref这个属性
         this.$refs[formName].validate((valid) => {
           if (valid) {
             this.loginsys(this.formdata).then(res => {
@@ -70,6 +74,7 @@
                 localStorage.setItem('user', res.data.username)
                 var aa = localStorage.getItem('user')
                 console.info("放入aa", aa)
+                this.open("登陆成功！！！！")
                 this.$router.push({path: "/home"})
               } else {
                 alert(res.msg)
