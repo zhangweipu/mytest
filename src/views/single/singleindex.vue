@@ -1,5 +1,5 @@
 <template>
-  <el-carousel :title="title" :interval="5000" arrow="always" :height="height1">
+  <el-carousel :title="title" :interval="5000" arrow="always" :height="this.windowHeight()">
     <el-carousel-item :title="title" v-for="(item,idx) in dataCarousel" :key="idx">
       <!--:class是做什么的 :style 和style的区别是什么-->
       <div class="pull-height animated" :style="{backgroundImage:'url('+item.imgUrl+')'}" :class="'a'+idx"
@@ -106,9 +106,12 @@
 <script>
   //这种太复杂,自己的小东西用不到
   import {mapGetters, mapActions} from 'vuex'
-
+import footers  from '../single/singlelayout/singlefooter'
   export default {
     name: "singleindex",
+    components:{
+      footers
+    },
     data() {
       return {
         title: "",
@@ -145,10 +148,10 @@
     methods: {
       //demo.js中放入actions的方法调用使用方法名
       ...mapActions(['singleaction', 'getSentence', 'loginsys']),
-      getHeight() {
-        this.height1 = window.innerHeight + 'px';
-        console.log('hegiht', this.height1)
-      },
+      // getHeight() {
+      //   this.height1 = window.innerHeight + 'px';
+      //   console.log('hegiht', this.height1)
+      // },
       test() {
         var data = {
           'str': 'here'
@@ -174,7 +177,7 @@
     },
     created() {
       window.addEventListener('resize', this.getHeight);
-      this.getHeight()
+      // this.getHeight()
       console.info('获取完高度')
       this.findsentence()
     },
