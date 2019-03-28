@@ -76,8 +76,22 @@
               张伟普的主页
             </el-header>
             <el-main class="el-main" style="height: 600px;background: rgba(255,255,255,0.0)">
-              <div class="ql-container">
-                didjidjidjidjiji
+              <div class="ql">
+                <div class="list-group">
+                  <div class="list-group-item" v-for="i in articles" @click="godetail(i.id)"
+                       style="border: red solid 1px;height: 200px;line-height: 20px;opacity: 0.5;">
+                    <div
+                      style="border: black solid 1px;height: 40px;font-size: xx-large;text-align:left;line-height: 50px">
+                      {{i.title}}
+                    </div>
+                    <div style="text-align:left;line-height: 20px;height:80px;border: red solid 1px;padding-left: 50px">
+                      {{i.content}}<i class="el-icon-more"></i></div>
+                    <div style="border: black solid 1px;height: 40px;">
+                      <div style="float: left;font-size: larger"><i class="el-icon-location">{{i.userid}}</i></div>
+                      <div style="float: left;font-size: larger"><i class="el-icon-date">{{i.createtime}}</i></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </el-main>
             <el-footer
@@ -106,10 +120,11 @@
 <script>
   //这种太复杂,自己的小东西用不到
   import {mapGetters, mapActions} from 'vuex'
-import footers  from '../single/singlelayout/singlefooter'
+  import footers from '../single/singlelayout/singlefooter'
+
   export default {
     name: "singleindex",
-    components:{
+    components: {
       footers
     },
     data() {
@@ -132,13 +147,53 @@ import footers  from '../single/singlelayout/singlefooter'
             poem: "锄禾日当午，汗滴禾下土，谁知盘中餐，"
           }
         ],
-        sentence: {
-          id: '',
-          userid: '',
-          title: '',
-          createtime: '',
-          content: ''
-        }
+        sentence: {},
+        articles: [{
+          id: 'aa11',
+          userid: 'aaaaass',
+          title: 'sss',
+          createtime: 'sssssdnffnjfnj',
+          content: 'dnjdnjdnjdnjnjd' +
+            'jjhushihfbbdddnfjbvjcbxjbc' +
+            'cvbjkcbxzjvcbjxz' +
+            '插线板嘉宾出席嘉宾出席' +
+            '地方hi丹佛i解放后hi但是' +
+            'dsfhoihifsjosdhfihsfdfd' +
+            '但还是佛i哦吼迪佛送dsfhio ' +
+            '分电视剧佛对手i腹地' +
+            '的方式哦的身份后i' +
+            '的身份hi哦都十分hi反倒是' +
+            '的时间佛教的的加偶但是' +
+            'dfjodsfhopdasvnk ' +
+            '的房间死哦绝对是佛法的' +
+            '地方hi哦为哦啊市场门口出口v你' +
+            '的身份你睡觉哦反饥饿反' +
+            '的飞机的飞机都费劲' +
+            'fjdifjfdijfidf' +
+            '放假哦对房价sdhuidhsishsishdihdihsisahdiagfsgdzbjcxbv '
+        },
+          {
+            id: 'aaaa22',
+            userid: 'aaaaas222s',
+            title: 'sss',
+            createtime: 'sssssd22nffnjfnj',
+            content: 'dnjdnjdnj2dnjnjd'
+          },
+          {
+            id: 'aaa33a',
+            userid: 'aaaa22a3333ss',
+            title: 'sss',
+            createtime: 'sssssdnffnjfnj',
+            content: '333333333333333'
+          },
+          {
+            id: 'aaaa4',
+            userid: 'aaaaas4s',
+            title: 'sss',
+            createtime: 'sssss4dnffnjfnj',
+            content: 'dnjdnjdn4jdnjnjd'
+          }
+        ]
       }
     },
     //使用的是getters.js中放入的值，通过mutations中的数据实现联动的
@@ -159,6 +214,9 @@ import footers  from '../single/singlelayout/singlefooter'
         this.loginsys(data).then(res => {
 
         })
+      },
+      godetail(id) {
+        this.$router.push({path: '/single/article/' + id});
       },
       findsentence() {
         this.getSentence(2).then(res => {
@@ -189,6 +247,40 @@ import footers  from '../single/singlelayout/singlefooter'
 
 </script>
 <style scoped>
+  /*.ar {*/
+  /*!*清除浮动并不能使文字位于div里*!*/
+  /*!*clear: both;*!*/
+  /*!*position: relative;*!*/
+  /*!*margin: 0px;*!*/
+  /*!*padding: 0px;*!*/
+  /*!*height: 20px;*!*/
+
+  /*}*/
+  .ar-title {
+    /*margin-top: -50px;*/
+    border: red solid 1px;
+  }
+
+  .ar-key {
+    border: #409eff solid 2px;
+  }
+
+  .ar-content {
+    border: #0b0b0b solid 2px;
+  }
+
+  .ar-detail {
+    border: white solid 2px;
+  }
+
+  /*.ls {*/
+  /*background-color: #b1dfbb;*/
+  /*height: 150px;*/
+  /*opacity: 0.8;*/
+  /*margin: 0px;*/
+  /*!*padding: 0px;*!*/
+  /*}*/
+
   .ql-editor {
     font-size: small;
     color: red;
@@ -215,6 +307,7 @@ import footers  from '../single/singlelayout/singlefooter'
     color: #df5723;
     margin-left: 30px;
   }
+
 
   .poems, .index2-main {
     /*设置透明但是有模糊设置透明：background-color: rgba(255,255,255,0.0)*/

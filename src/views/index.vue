@@ -66,6 +66,7 @@
       }
     },
     created() {
+      //获取窗口高度的方法
       window.addEventListener('resize', this.getHeight);
       this.getHeight()
     },

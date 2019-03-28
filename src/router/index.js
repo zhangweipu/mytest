@@ -55,6 +55,12 @@ export default new Router({
 
     },
     {
+      path: '/single/article/:id',
+      name: '文章',
+      title: '论文',
+      component: _import('single/filed/index')
+    },
+    {
       path: '/resume',
       name: 'resume',
       component: _import('show/resume/index')

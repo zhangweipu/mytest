@@ -5,6 +5,7 @@ module.exports = {
   testUrl: "wwwwwww",
   addArticle: serverUrl + "/admin/article/add",
   getSentence: serverUrl + "/single/getSentence/",
+  getArticle:serverUrl+'/single/getArticle',
   single: serverUrl + "/single/index",
   loginUrl: serverUrl + "/admin/login"
 }
