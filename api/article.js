@@ -10,5 +10,8 @@ export function getSentence(data) {
 }
 
 export function getArticle(id) {
-  return fecth.post(url.getArticle, id)
+  return fecth.post(url.getArticle+ id)
+}
+export function searchAllArticle(pageNum) {
+  return fecth.post(url.searchAllArticle, {pageNum:pageNum})
 }

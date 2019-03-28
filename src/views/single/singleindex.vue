@@ -78,7 +78,7 @@
             <el-main class="el-main" style="height: 600px;background: rgba(255,255,255,0.0)">
               <div class="ql">
                 <div class="list-group">
-                  <div class="list-group-item" v-for="i in articles" @click="godetail(i.id)"
+                  <div class="list-group-item" v-for="i in articles.list" @click="godetail(i.id)"
                        style="border: red solid 1px;height: 200px;line-height: 20px;opacity: 0.5;">
                     <div
                       style="border: black solid 1px;height: 40px;font-size: xx-large;text-align:left;line-height: 50px">
@@ -148,52 +148,27 @@
           }
         ],
         sentence: {},
-        articles: [{
-          id: 'aa11',
-          userid: 'aaaaass',
-          title: 'sss',
-          createtime: 'sssssdnffnjfnj',
-          content: 'dnjdnjdnjdnjnjd' +
-            'jjhushihfbbdddnfjbvjcbxjbc' +
-            'cvbjkcbxzjvcbjxz' +
-            '插线板嘉宾出席嘉宾出席' +
-            '地方hi丹佛i解放后hi但是' +
-            'dsfhoihifsjosdhfihsfdfd' +
-            '但还是佛i哦吼迪佛送dsfhio ' +
-            '分电视剧佛对手i腹地' +
-            '的方式哦的身份后i' +
-            '的身份hi哦都十分hi反倒是' +
-            '的时间佛教的的加偶但是' +
-            'dfjodsfhopdasvnk ' +
-            '的房间死哦绝对是佛法的' +
-            '地方hi哦为哦啊市场门口出口v你' +
-            '的身份你睡觉哦反饥饿反' +
-            '的飞机的飞机都费劲' +
-            'fjdifjfdijfidf' +
-            '放假哦对房价sdhuidhsishsishdihdihsisahdiagfsgdzbjcxbv '
+        articles: {
+          endrow: 0,
+          firstPage: 1,
+          lastPage: 1,
+          hasNextPage: true,
+          hasPreviousPage: false,
+          list: [
+            {
+              content: '',
+              createtime: '',
+              id: '',
+              imageurl: '',
+              outline: '',
+              title: '',
+              type: '',
+              userid: ''
+            }
+          ]
         },
-          {
-            id: 'aaaa22',
-            userid: 'aaaaas222s',
-            title: 'sss',
-            createtime: 'sssssd22nffnjfnj',
-            content: 'dnjdnjdnj2dnjnjd'
-          },
-          {
-            id: 'aaa33a',
-            userid: 'aaaa22a3333ss',
-            title: 'sss',
-            createtime: 'sssssdnffnjfnj',
-            content: '333333333333333'
-          },
-          {
-            id: 'aaaa4',
-            userid: 'aaaaas4s',
-            title: 'sss',
-            createtime: 'sssss4dnffnjfnj',
-            content: 'dnjdnjdn4jdnjnjd'
-          }
-        ]
+
+        pageNum: 1
       }
     },
     //使用的是getters.js中放入的值，通过mutations中的数据实现联动的
@@ -202,7 +177,7 @@
     },
     methods: {
       //demo.js中放入actions的方法调用使用方法名
-      ...mapActions(['singleaction', 'getSentence', 'loginsys']),
+      ...mapActions(['singleaction', 'getSentence', 'loginsys', 'getArticleAction', 'searchAllArticleAction']),
       // getHeight() {
       //   this.height1 = window.innerHeight + 'px';
       //   console.log('hegiht', this.height1)
@@ -216,7 +191,9 @@
         })
       },
       godetail(id) {
-        this.$router.push({path: '/single/article/' + id});
+        //todo:这里用的不是push，是resolve
+        let routeData = this.$router.resolve({path: '/single/article/' + id});
+        window.open(routeData.href, '_blank');
       },
       findsentence() {
         this.getSentence(2).then(res => {
@@ -225,6 +202,19 @@
           this.sentence = a
           console.info('sentence')
           console.info(this.sentence)
+        })
+      },
+      getArticles(pageNum) {
+        this.getArticleAction(pageNum).then(res => {
+          alert("sss")
+          console.info("获取文章")
+          this.articles = res.data
+        })
+      },
+      searchAllArticles() {
+        this.searchAllArticleAction(this.pageNum).then(res => {
+          console.info(res)
+          this.articles = res.data
         })
       },
       //页面跳转
@@ -237,7 +227,8 @@
       window.addEventListener('resize', this.getHeight);
       // this.getHeight()
       console.info('获取完高度')
-      this.findsentence()
+      this.findsentence();
+      this.searchAllArticles()
     },
     destroyed() {
       window.removeEventListener('resize', this.getHeight)

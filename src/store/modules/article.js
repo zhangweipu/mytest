@@ -1,6 +1,8 @@
 import {
   addArticle,
-  getSentence
+  getSentence,
+  getArticle,
+  searchAllArticle
 } from 'api/article';
 
 import {
@@ -33,6 +35,18 @@ const $article = {
       return getSentence(keyword).then(res => {
         console.info("获取数据")
         return res.data;
+      })
+    },
+    getArticleAction({commit},keyword){
+      return getArticle(keyword).then(res=>{
+        console.info('得到所有文章信息')
+        return res.data
+      })
+    },
+    searchAllArticleAction({commit},keyword){
+      return searchAllArticle(keyword).then(res=>{
+        console.info('得到所有文章信息')
+        return res.data
       })
     }
   }
