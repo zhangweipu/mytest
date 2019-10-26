@@ -23,13 +23,11 @@
               <div class="float-right" style="border: red solid;height: 100px;width: 50px;
           background-image: url('/static/image/lufei.jpeg');background-size: 100% 100%">
               </div>
-
-              <el-button @click="test">按钮</el-button>
             </el-main>
             <el-footer
               style="position: absolute;bottom: -10px;left: 0px;width: 100%;background-color: rgba(255,255,255,0.0)">
               <div style="height: 100%;margin: 0px;padding: 0px">
-                <router-link :to="{path:'/single',params: '',title: 'aa'}" class="links">首页</router-link>
+                <router-link :to="{path:'/single/blogindex',params: '',title: 'aa'}" class="links">首页</router-link>
                 <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">分类</router-link>
                 <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">归档</router-link>
                 <router-link target="_blank" :to="{name:'resume',params: '',title: 'aa'}" class="links">关于</router-link>
@@ -62,7 +60,7 @@
             <el-footer
               style="position: absolute;bottom: -10px;left: 0px;width: 100%;background-color: rgba(255,255,255,0.0)">
               <div style="height: 100%;margin: 0px;padding: 0px">
-                <router-link :to="{path:'/single',params: '',title: 'aa'}" class="links">首页</router-link>
+                <router-link :to="{path:'/single/blogindex',params: '',title: 'aa'}" class="links">首页</router-link>
                 <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">分类</router-link>
                 <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">归档</router-link>
                 <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">关于</router-link>
@@ -70,41 +68,41 @@
             </el-footer>
           </el-container>
         </div>
-        <div class="index3" :style="{display:idx==2?'': 'none'}">
-          <el-container class="content">
-            <el-header style="font-size: xx-large;background-color: rgba(255,255,255,0.0)">
-              张伟普的主页
-            </el-header>
-            <el-main class="el-main" style="height: 600px;background: rgba(255,255,255,0.0)">
-              <div class="ql">
-                <div class="list-group">
-                  <div class="list-group-item" v-for="i in articles.list" @click="godetail(i.id)"
-                       style="border: red solid 1px;height: 200px;line-height: 20px;opacity: 0.5;">
-                    <div
-                      style="border: black solid 1px;height: 40px;font-size: xx-large;text-align:left;line-height: 50px">
-                      {{i.title}}
-                    </div>
-                    <div style="text-align:left;line-height: 20px;height:80px;border: red solid 1px;padding-left: 50px">
-                      {{i.content}}<i class="el-icon-more"></i></div>
-                    <div style="border: black solid 1px;height: 40px;">
-                      <div style="float: left;font-size: larger"><i class="el-icon-location">{{i.userid}}</i></div>
-                      <div style="float: left;font-size: larger"><i class="el-icon-date">{{i.createtime}}</i></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </el-main>
-            <el-footer
-              style="position: absolute;bottom: -10px;left: 0px;width: 100%;background-color: rgba(255,255,255,0.0)">
-              <div style="height: 100%;margin: 0px;padding: 0px">
-                <router-link :to="{path:'/single',params: '',title: 'aa'}" class="links">首页</router-link>
-                <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">分类</router-link>
-                <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">归档</router-link>
-                <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">关于</router-link>
-              </div>
-            </el-footer>
-          </el-container>
-        </div>
+        <!--        <div class="index3" :style="{display:idx==2?'': 'none'}">-->
+        <!--          <el-container class="content">-->
+        <!--            <el-header style="font-size: xx-large;background-color: rgba(255,255,255,0.0)">-->
+        <!--              张伟普的主页-->
+        <!--            </el-header>-->
+        <!--            <el-main class="el-main" style="height: 600px;background: rgba(255,255,255,0.0)">-->
+        <!--              <div class="ql">-->
+        <!--                <div class="list-group">-->
+        <!--                  <div class="list-group-item" v-for="i in articles.list" @click="godetail(i.id)"-->
+        <!--                       style="border: red solid 1px;height: 200px;line-height: 20px;opacity: 0.5;">-->
+        <!--                    <div-->
+        <!--                      style="border: black solid 1px;height: 40px;font-size: xx-large;text-align:left;line-height: 50px">-->
+        <!--                      {{i.title}}-->
+        <!--                    </div>-->
+        <!--                    <div style="text-align:left;line-height: 20px;height:80px;border: red solid 1px;padding-left: 50px">-->
+        <!--                      {{i.content}}<i class="el-icon-more"></i></div>-->
+        <!--                    <div style="border: black solid 1px;height: 40px;">-->
+        <!--                      <div style="float: left;font-size: larger"><i class="el-icon-location">{{i.userid}}</i></div>-->
+        <!--                      <div style="float: left;font-size: larger"><i class="el-icon-date">{{i.createtime}}</i></div>-->
+        <!--                    </div>-->
+        <!--                  </div>-->
+        <!--                </div>-->
+        <!--              </div>-->
+        <!--            </el-main>-->
+        <!--            <el-footer-->
+        <!--              style="position: absolute;bottom: -10px;left: 0px;width: 100%;background-color: rgba(255,255,255,0.0)">-->
+        <!--              <div style="height: 100%;margin: 0px;padding: 0px">-->
+        <!--                <router-link :to="{path:'/single',params: '',title: 'aa'}" class="links">首页</router-link>-->
+        <!--                <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">分类</router-link>-->
+        <!--                <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">归档</router-link>-->
+        <!--                <router-link :to="{name:'resume',params: '',title: 'aa'}" class="links">关于</router-link>-->
+        <!--              </div>-->
+        <!--            </el-footer>-->
+        <!--          </el-container>-->
+        <!--        </div>-->
       </div>
     </el-carousel-item>
   </el-carousel>
@@ -141,11 +139,12 @@
           {
             imgUrl: "/static/image/bg-img-05.jpg",
             poem: "锄禾日当午，汗滴禾下土，"
-          },
-          {
-            imgUrl: "/static/image/bg-img-06.jpg",
-            poem: "锄禾日当午，汗滴禾下土，谁知盘中餐，"
           }
+          // ,
+          // {
+          //   imgUrl: "/static/image/bg-img-06.jpg",
+          //   poem: "锄禾日当午，汗滴禾下土，谁知盘中餐，"
+          // }
         ],
         sentence: {},
         articles: {
@@ -228,7 +227,7 @@
       // this.getHeight()
       console.info('获取完高度')
       this.findsentence();
-      this.searchAllArticles()
+      // this.searchAllArticles()
     },
     destroyed() {
       window.removeEventListener('resize', this.getHeight)

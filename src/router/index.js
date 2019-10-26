@@ -43,28 +43,38 @@ export default new Router({
       path: '/single',
       name: '这是主页',
       title: 'single',
-      component: _import('single/singleindex'),
+      component: _import('single/singleIndex2'),
+      // children: [
+      //   {
+      //     path: '/single/dictionary',
+      //     name: '字典',
+      //     title: 'dictionary',
+      //     component: _import('single/otherfunction/dictionary')
+      //     //  todo：为什么放这里面就不行了
+      //   }
+      // ]
       children: [
         {
-          path: '/single/dictionary',
-          name: '字典',
-          title: 'dictionary',
-          component: _import('single/otherfunction/dictionary')
+          path: '/single/blogindex',
+          name: '主页内容',
+          title: 'content',
+          component: _import('single/blogcontent/blogindex')
+        },
+        {
+          path: '/single/article/:id',
+          name: '文章',
+          title: '论文',
+          component: _import('single/filed/index')
+        },
+        {
+          path: '/resume',
+          name: 'resume',
+          component: _import('show/resume/index')
         }
       ]
 
     },
-    {
-      path: '/single/article/:id',
-      name: '文章',
-      title: '论文',
-      component: _import('single/filed/index')
-    },
-    {
-      path: '/resume',
-      name: 'resume',
-      component: _import('show/resume/index')
-    },
+
     //这货的作用是什么
     {
       path: '/login',
