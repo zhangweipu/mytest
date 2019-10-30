@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import SingleAppMain from "./views/single/SingleAppMain";
 import router from './router'
 import axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
@@ -45,7 +46,7 @@ new Vue({
   router,
   store,
   axios,
-  components: {App},
+  components: {App,SingleAppMain},
   template: '<App/>'
 })
 
