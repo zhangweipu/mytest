@@ -1,6 +1,63 @@
 <template>
-  <div :style="{height:heights}">
-<!-- 存在加载的问题-->
+  <div>
+    <!-- 存在加载的问题-->
+    <el-card>
+      <div slot="header" style="height: 10px">
+        ssssdhuhdu
+      </div>
+      <div>
+        vjvdjfif
+        djidji
+        djijid
+        jdi\n
+        ssscccc
+      </div>
+      <div>
+        vjvdjfif
+        djidji
+        djijid
+        jdi\n
+        ssscccc
+      </div>
+      <div>
+        vjvdjfif
+        djidji
+        djijid
+        jdi\n
+        ssscccc
+      </div>
+      <el-divider></el-divider>
+      <div>
+        sss
+      </div>
+    </el-card>
+
+    <el-card>
+      <div slot="header" style="height: 10px">
+        ssssdhuhdu
+      </div>
+      <div>
+        vjvdjfif
+        djidji
+        djijid
+        jdi\n
+        ssscccc
+      </div>
+      <div>
+        vjvdjfif
+        djidji
+        djijid
+        jdi\n
+        ssscccc
+      </div>
+      <div>
+        vjvdjfif
+        djidji
+        djijid
+        jdi\n
+        ssscccc
+      </div>
+    </el-card>
 
   </div>
 
@@ -16,7 +73,7 @@
         },
         data() {
             return {
-                heights: '50px',
+                // heights: '50px',
                 count: 10
             }
         },
@@ -28,38 +85,11 @@
     }
 </script>
 
-<style>
-  .el-header, .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
-    line-height: 60px;
-  }
-
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
-
-  .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-  }
-
-  body > .el-container {
-    margin-bottom: 40px;
-  }
-
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
+<style scoped>
+.el-card{
+  margin-bottom: 10px;
+}
+  .el-divider{
+    margin: 0px;
   }
 </style>

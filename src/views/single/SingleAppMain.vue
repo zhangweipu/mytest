@@ -5,10 +5,10 @@
         <el-main :style="{height: windowHeight}" style="padding: 0px">
           <el-row style="padding: 0px;margin: 0px">
             <el-col :span="3">
-              <div class="grid-content bg-purple" style="padding: 0px" :style="{height: windowHeight}"></div>
+              <div style="padding: 0px" :style="{height: windowHeight}"></div>
             </el-col>
             <el-col :span="14">
-              <div class="grid-content bg-purple-light">
+              <div class="el-main">
                 <router-view/>
               </div>
             </el-col>

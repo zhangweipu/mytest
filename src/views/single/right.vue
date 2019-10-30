@@ -1,7 +1,25 @@
 <template>
-  <div class="grid-content bg-purple" :style="{height: windowHeight}">
+  <div :style="{height: windowHeight}">
 
-      <div class="block">
+    <el-card class="right">
+      <div class="right-label">ss</div>
+      <div class="right-content">
+        dd
+      </div>
+    </el-card>
+
+      <el-card class="right">
+        <div>
+          sss
+        </div>
+        <el-container>
+          ssss
+        </el-container>
+        ssssffji
+      </el-card>
+
+
+      <el-card class="right">
         <div class="radio">
           排序：
           <el-radio-group v-model="reverse">
@@ -18,8 +36,10 @@
             {{activity.content}}
           </el-timeline-item>
         </el-timeline>
-      </div>
+      </el-card>
+
   </div>
+
 
 </template>
 
@@ -36,6 +56,15 @@
                     content: '通过审核',
                     timestamp: '2018-04-13'
                 }, {
+                    content: '创建成功',
+                    timestamp: '2018-04-11'
+                },{
+                    content: '创建成功',
+                    timestamp: '2018-04-11'
+                },{
+                    content: '创建成功',
+                    timestamp: '2018-04-11'
+                },{
                     content: '创建成功',
                     timestamp: '2018-04-11'
                 }]
@@ -72,4 +101,7 @@
 /*    margin: 0px;*/
 /*    padding: 0px;*/
 /*  }*/
+  .right{
+    margin-bottom: 20px;
+  }
 </style>
